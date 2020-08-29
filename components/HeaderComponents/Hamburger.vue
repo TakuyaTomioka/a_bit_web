@@ -1,18 +1,18 @@
 <template>
   <nav>
     <div class="logo">
-      <img src="@/assets/img/logo_web2.svg" alt="ロゴ">
+      <nuxt-link to="/"><img src="@/assets/img/logo_web2.svg" alt="ロゴ"></nuxt-link>
     </div>
     <div class="hamburger" @click="toggleActive">
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
+      <div v-if="isActive === false">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <div class="toggle" v-if="isActive === true">
+       <img src="@/assets/img/clear.svg" alt="Cancel" class="cancel">
+      </div>
     </div>
-    <!-- <ul class="nav-links isPC">
-      <li><a href="#">ブログ</a></li>
-      <li><a href="#">ポートフォリオ</a></li>
-      <li><a href="#">お問い合わせ</a></li>
-    </ul> -->
     <ul class="nav-links isPC">
       <li><nuxt-link to="/categories">技術記事</nuxt-link></li>
       <li><nuxt-link to="portofolio">ポートフォリオ</nuxt-link></li>
@@ -34,11 +34,13 @@ export default {
   data() {
     return{
       show: false,
+      isActive: false,
     }
   },
   methods:{
     toggleActive: function(){
       this.show = !this.show;
+      this.isActive = !this.isActive;
     }
   }
 }
@@ -84,14 +86,18 @@ nav {
 
 @media screen and (max-width: 768px) {
   .isPC{
-  display: none;
-}
-.isSP{
-  display: block;
-}
+    display: none;
+  }
+  .isSP{
+    display: block;
+  }
   .logo{
     width: 40vw;
   }
+  .cancel{
+    width: 12vw;
+  }
+
   .line {
     width: 30px;
     height: 3px;
