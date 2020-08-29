@@ -36,6 +36,10 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
+    {
+      src: '@/plugins/plugin',
+      mode: 'client'
+    }
   ],
   /*
   ** Auto import components
@@ -57,7 +61,7 @@ export default {
   ],
   webfontloader: {
     google: {
-      families: ['Kosugi Maru']
+      families: ['Noto+Sans+JP']
     }
   },
   /*
