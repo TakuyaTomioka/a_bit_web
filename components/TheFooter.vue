@@ -17,10 +17,6 @@ footer{
   background: #D8D5D4;
   font-family: 'Kosugi Maru', sans-serif;
   text-align: center;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
 }
 
 @media screen and (max-width: 768px) {
