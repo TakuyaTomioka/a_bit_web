@@ -53,7 +53,13 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    'nuxt-webfontloader',
   ],
+  webfontloader: {
+    google: {
+      families: ['Kosugi Maru']
+    }
+  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
