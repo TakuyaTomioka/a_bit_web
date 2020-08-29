@@ -1,41 +1,66 @@
 <template>
-  <div class="hamburger-wraper">
-    <div class="hamburger">
+  <nav>
+    <div class="logo">
+      <img src="@/assets/img/logo_web2.svg" alt="ロゴ">
+    </div>
+    <div class="hamburger" @click="toggleActive">
       <div class="line"></div>
       <div class="line"></div>
       <div class="line"></div>
     </div>
-    <ul class="nav-links">
+    <ul class="nav-links isPC">
       <li><a href="#">ブログ</a></li>
       <li><a href="#">ポートフォリオ</a></li>
       <li><a href="#">お問い合わせ</a></li>
     </ul>
-
-    <section class="landing">
-      <img src="@/assets/img/circles.svg" alt="dots">
-      <h1>Dots</h1>
-    </section>
-  </div>
+    <transition class="isSP">
+      <ul class="nav-links" v-show="show">
+        <li><a href="#">ブログ</a></li>
+        <li><a href="#">ポートフォリオ</a></li>
+        <li><a href="#">お問い合わせ</a></li>
+      </ul>
+    </transition>
+  </nav>
 </template>
 
 <script>
 
-const hamburger = document.querySelector(".hamburger");
-const navLinks = document.querySelector(".nav-links");
-const links = document.querySelectorAll(".nav-links li");
-
-hamburger.addEventListener("click", () => {
-  navLinks.classList.toggle("open");
-})
-
+export default {
+  data() {
+    return{
+      show: false,
+    }
+  },
+  methods:{
+    toggleActive: function(){
+      this.show = !this.show;
+    }
+  }
+}
 </script>
 
 <style scoped>
-.hamburger-wraper{
-  height: 10vh;
-  background: #5b78c7;
+.isPC{
+  display: block;
 }
-.nav-links{
+.isSP{
+  display: none;
+}
+.logo{
+  width: 20vw;
+  margin-left: 5vw;
+  z-index: 1;
+}
+
+nav {
+  display: flex;
+  height: 10vh;
+  background: #B4DAED;
+  align-items: center;
+  font-family: 'Kosugi Maru', sans-serif;
+}
+
+.nav-links {
   display: flex;
   list-style: none;
   width: 50%;
@@ -44,76 +69,90 @@ hamburger.addEventListener("click", () => {
   align-items: center;
   margin-left: auto;
 }
-.nav-links li a{
-  color: #ffffff;
+
+.nav-links li a {
+  color: white;
   text-decoration: none;
-  font-size: 16px;
-}
-.landing{
-  height: 90vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.landing h1{
-  margin: 100px;
-  font-size: 50px;
-  color: #ae5fce;
+  font-size: 24px;
+  font-weight: 700;
 }
 
-@media screen and (max-width: 768px){
-  .line{
+@media screen and (max-width: 768px) {
+  .isPC{
+  display: none;
+}
+.isSP{
+  display: block;
+}
+  .logo{
+    width: 40vw;
+  }
+  .line {
     width: 30px;
     height: 3px;
-    background: #ffffff;
+    background: white;
     margin: 5px;
   }
-  .hamburger-wraper{
+  nav {
+    display: block;
     position: relative;
   }
-  .hamburger{
+
+  .hamburger {
     position: absolute;
     cursor: pointer;
     right: 5%;
-    top: 20%;
+    top: 50%;
     transform: translate(-5%, -50%);
     z-index: 2;
   }
 
-  .nav-links{
+  .nav-links {
     position: fixed;
-    background: #5b78c7;
+    background: #B4DAED;
     height: 100vh;
     width: 100%;
     flex-direction: column;
-    clip-path: circle(100px at 90% -10%);
-    -webkit-clip-path: circle(1000px at 90% -10%);
+    clip-path: circle(800px at 90% -10%);
+    -webkit-clip-path: circle(800px at 90% -10%);
     transition: all 1s ease-out;
   }
-  .nav-links.open{
-    clip-path: circle(1000px at 90% -10%);
-    -webkit-clip-path: circle(1000px at 90% -10%);
+
+  .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 700;
   }
-  .landing{
-    flex-direction: column;
+
+  .nav-links li:nth-child(3){
+    margin-bottom:100px;
   }
-  .nav-links li{
+
+
+  .v-enter-active {
+    transition: all 1.0s ease 0s;
+  }
+  .v-leave-active {
+    transition: all 0.3s ease 0s;
+  }
+  .v-leave-active {
+    position: absolute;
+  }
+  .v-enter,
+  .v-leave-to {
     opacity: 0;
   }
-  .nav-links li a{
-    font-size: 25px;
+  .v-enter {
+    transform: translateX(60px);
   }
-  .nav-links li:nth-child(1){
-    transition: all 0.5s ease 0.2s;
+  .v-enter-to,
+  .v-leave {
+    transform: translateX(0);
   }
-   .nav-links li:nth-child(2){
-    transition: all 0.5s ease 0.4s;
+  .v-leave-to {
+    transform: translateX(-60px);
   }
-   .nav-links li:nth-child(3){
-    transition: all 0.5s ease 0.6s;
-  }
-  li.fade{
-    opacity: 1;
-  }
+
 }
 </style>

@@ -35,12 +35,7 @@ export default {
   ** Plugins to load before mounting the App
   ** https://nuxtjs.org/guide/plugins
   */
-  plugins: [
-    {
-      src: '@/plugins/plugin',
-      mode: 'client'
-    }
-  ],
+  plugins: [],
   /*
   ** Auto import components
   ** See https://nuxtjs.org/api/configuration-components
@@ -61,7 +56,7 @@ export default {
   ],
   webfontloader: {
     google: {
-      families: ['Noto+Sans+JP']
+      families: ['Kosugi+Maru']
     }
   },
   /*

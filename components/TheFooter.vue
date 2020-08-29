@@ -1,6 +1,6 @@
 <template>
   <div>
-    footer
+    フッター
   </div>
 </template>
 
