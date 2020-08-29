@@ -8,16 +8,21 @@
       <div class="line"></div>
       <div class="line"></div>
     </div>
-    <ul class="nav-links isPC">
+    <!-- <ul class="nav-links isPC">
       <li><a href="#">ブログ</a></li>
       <li><a href="#">ポートフォリオ</a></li>
       <li><a href="#">お問い合わせ</a></li>
+    </ul> -->
+    <ul class="nav-links isPC">
+      <li><nuxt-link to="/categories">技術記事</nuxt-link></li>
+      <li><nuxt-link to="portofolio">ポートフォリオ</nuxt-link></li>
+      <li><nuxt-link to="contact">お問い合わせ</nuxt-link></li>
     </ul>
     <transition class="isSP">
       <ul class="nav-links" v-show="show">
-        <li><a href="#">ブログ</a></li>
-        <li><a href="#">ポートフォリオ</a></li>
-        <li><a href="#">お問い合わせ</a></li>
+        <li><nuxt-link to="/categories">技術記事</nuxt-link></li>
+        <li><nuxt-link to="portofolio">ポートフォリオ</nuxt-link></li>
+        <li><nuxt-link to="contact">お問い合わせ</nuxt-link></li>
       </ul>
     </transition>
   </nav>
