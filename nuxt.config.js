@@ -1,3 +1,4 @@
+require('dotenv').config()
 
 export default {
   /*
@@ -35,7 +36,7 @@ export default {
   ** Plugins to load before mounting the App
   ** https://nuxtjs.org/guide/plugins
   */
-  plugins: [],
+  plugins: ['@/plugins/contentful'],
   /*
   ** Auto import components
   ** See https://nuxtjs.org/api/configuration-components
@@ -53,6 +54,7 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     'nuxt-webfontloader',
+    '@nuxtjs/dotenv',
   ],
   webfontloader: {
     google: {
@@ -69,5 +71,9 @@ export default {
   ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
-  }
+  },
+  // env: {
+  //   CTF_SPACE_ID: process.env.CTF_SPACE_ID,
+  //   CTF_CDA_ACCESS_TOKEN: process.env.CTF_CDA_ACCESS_TOKEN 
+  // },
 }
