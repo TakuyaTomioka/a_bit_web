@@ -2,8 +2,8 @@
   <div class="mv">
     <img src="@/assets/img/mv.jpg" class="isPC pc" alt="メインビジュアル">
     <img src="@/assets/img/mv_sp.jpg" class="isSP sp" alt="スマホ用メインビジュアル">
-    <p class="message isPC">明日の開発を<br><span class="orange">ちょっと</span>良くしよう</p>
-    <p class="message isSP">明日の開発を<br><span class="orange">ちょっと</span> 良くしよう</p>
+    <p class="message isPC">明日の開発を<br><span class="orange">ちょっと</span>良くする</p>
+    <p class="message isSP">明日の開発を<br><span class="orange">ちょっと</span><br>良くする</p>
   </div>
 </template>
 
@@ -56,6 +56,9 @@ export default {
     top: 50%;
     left: 38%;
     /* width: 100%; */
+  }
+  span{
+    font-size: 3.0rem;
   }
 }
 </style>
