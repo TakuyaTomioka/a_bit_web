@@ -1,4 +1,5 @@
 <template>
+<div class="bg-blue">
   <nav>
     <div class="logo">
       <nuxt-link to="/"><img src="@/assets/img/logo_web2.svg" alt="ロゴ"></nuxt-link>
@@ -26,6 +27,7 @@
       </ul>
     </transition>
   </nav>
+</div>
 </template>
 
 <script>
@@ -54,15 +56,22 @@ export default {
   display: none;
 }
 .logo{
+  max-width: 350px;
   width: 20vw;
   margin-left: 5vw;
   z-index: 1;
 }
+.bg-blue{
+  background: #B4DAED;
+}
 
 nav {
+  max-width: 1980px;
+  width: 80%;
+  margin: 0 auto;
   display: flex;
   height: 10vh;
-  background: #B4DAED;
+  /* background: #B4DAED; */
   align-items: center;
   font-family: 'Kosugi Maru', sans-serif;
 }
