@@ -67,11 +67,9 @@ export default {
 
 nav {
   max-width: 1980px;
-  width: 80%;
   margin: 0 auto;
   display: flex;
   height: 10vh;
-  /* background: #B4DAED; */
   align-items: center;
   font-family: 'Kosugi Maru', sans-serif;
 }
