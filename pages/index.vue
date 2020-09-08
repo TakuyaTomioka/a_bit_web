@@ -48,7 +48,7 @@ export default {
 h1{
   font-size: 1.8rem;
   font-family: 'Roboto Mono', sans-serif;
-  margin: 1.4rem;
+  margin: 1.4rem 0;
   width: 15%;
   padding:0 0 .1rem .7rem;
   border-bottom: solid #E5E5E5 5px;
@@ -78,7 +78,7 @@ div a{
 .post-title{
   font-family: 'Roboto Mono','Kosugi Maru', sans-serif;
   padding-top: 10px;
-  font-size: 1.2rem;
+  /* font-size: 1.2rem; */
 }
 
 .post-date{
