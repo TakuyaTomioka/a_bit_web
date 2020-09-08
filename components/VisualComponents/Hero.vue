@@ -17,7 +17,9 @@ export default {
   /* font-family: 'Kosugi Maru','Roboto', sans-serif; */
   font-family: 'Roboto', 'Kosugi Maru', sans-serif;
   position: relative;
+  max-width: 1980px;
   width: 100%;
+  margin: 0 auto;
 }
 
 
@@ -55,7 +57,7 @@ export default {
   .message{
     font-size: 2.4rem;
     top: 50%;
-    left: 38%;
+    left: 34%;
     /* width: 100%; */
   }
   span{
