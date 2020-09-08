@@ -58,7 +58,10 @@ export default {
   ],
   webfontloader: {
     google: {
-      families: ['Kosugi+Maru']
+      families: [
+        'Kosugi+Maru',
+        'Roboto'
+      ]
     }
   },
   /*

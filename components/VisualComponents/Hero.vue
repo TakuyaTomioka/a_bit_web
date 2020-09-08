@@ -2,8 +2,8 @@
   <div class="mv">
     <img src="@/assets/img/mv.jpg" class="isPC pc" alt="メインビジュアル">
     <img src="@/assets/img/mv_sp.jpg" class="isSP sp" alt="スマホ用メインビジュアル">
-    <p class="message isPC">明日の開発を<br><span class="orange">ちょっと</span>良くする</p>
-    <p class="message isSP">明日の開発を<br><span class="orange">ちょっと</span><br>良くする</p>
+    <p class="message isPC">明日のWEBを<br><span class="orange">ちょっと</span>良くする</p>
+    <p class="message isSP">明日のWEBを<br><span class="orange">ちょっと</span><br>良くする</p>
   </div>
 </template>
 
@@ -14,7 +14,8 @@ export default {
 </script>
 <style>
 .mv{
-  font-family: 'Kosugi Maru', sans-serif;
+  /* font-family: 'Kosugi Maru','Roboto', sans-serif; */
+  font-family: 'Roboto', 'Kosugi Maru', sans-serif;
   position: relative;
   width: 100%;
 }
