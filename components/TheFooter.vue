@@ -15,13 +15,13 @@ footer{
   padding: 10px 0;
   color: #ffffff;
   background: #D8D5D4;
-  font-family: 'Kosugi Maru', sans-serif;
+  font-family: 'Roboto Mono','Kosugi Maru', sans-serif;
   text-align: center;
 }
 
 @media screen and (max-width: 768px) {
   footer{
-    font-size: 14px;
+    font-size: 0.5rem;
   }
 }
 </style>
