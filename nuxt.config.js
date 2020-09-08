@@ -54,7 +54,7 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     'nuxt-webfontloader',
-    '@nuxtjs/dotenv',
+    // '@nuxtjs/dotenv',
   ],
   webfontloader: {
     google: {
