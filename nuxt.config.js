@@ -60,7 +60,8 @@ export default {
     google: {
       families: [
         'Kosugi+Maru',
-        'Roboto'
+        'Roboto',
+        'Roboto+Mono',
       ]
     }
   },
