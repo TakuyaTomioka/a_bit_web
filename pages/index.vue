@@ -2,9 +2,8 @@
   <div>
     <Hero />
     <div class="wrapper">
-      <h1>Latest</h1>
-
-      <section id="latest">
+      <h1>おすすめ</h1>
+      <!-- <section id="latest">
         <div class="posts" v-for="(post, index) in posts" :key="index">
           <nuxt-link :to="post.fields.slug">
             <img :src="post.fields.headerImage.fields.file.url" alt="thumbnail">
@@ -14,31 +13,39 @@
             </div>
           </nuxt-link>
         </div>
-      </section>
-
+      </section> -->
+      <card 
+        v-for = "post in posts"
+        :key = "post.sys.id"
+        :image = "post.fields.headerImage.fields.file.url"
+        :slug = "post.fields.slug"
+        :title = "post.fields.title"
+        :date = "post.fields.publishedAt"
+      />
     </div>
   </div>
 </template>
 
 <script>
 import Hero from'@/components/VisualComponents/Hero'
+import Card from '@/components/VisualComponents/Card'
 import client from '@/plugins/contentful'
 export default {
   asyncData() {
     return client
     .getEntries({
-      content_type: 'blogPost'
+      content_type: 'blogPost',
+      order: '-fields.publishedAt'
+      // "fields.recommendation" : true
     })
-    .then(entries => {
-      return { posts: entries.items }
+    .then(results => {
+      return { posts: results.items }
     })
     .catch(e => console.log(e));
   },
-  // head:{
-  //   title: 'Latest Posts',
-  // },
   components:{
     Hero,
+    Card,
   }
 }
 </script>
@@ -54,7 +61,7 @@ h1{
   border-bottom: solid #E5E5E5 5px;
 }
 
-img{
+/* img{
   width: 20%;
   height: auto;
   object-fit: cover;
@@ -78,7 +85,6 @@ div a{
 .post-title{
   font-family: 'Roboto Mono','Kosugi Maru', sans-serif;
   padding-top: 10px;
-  /* font-size: 1.2rem; */
 }
 
 .post-date{
@@ -90,14 +96,14 @@ div a{
   max-width: 1280px;
   width: 80%;
   margin: 0 auto;
-}
+} */
 
 @media screen and (max-width: 768px){
   h1{
     margin: 1.0rem;
     width: 50%;
   }
-  img{
+  /* img{
     width: 100px;
     height: 100px;
   }
@@ -117,7 +123,7 @@ div a{
   }
   .wrapper{
     width: 90%;
-  }
+  } */
 
 }
 </style>
