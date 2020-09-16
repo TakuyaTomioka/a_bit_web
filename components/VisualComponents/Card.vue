@@ -1,6 +1,6 @@
 <template>
   <section id="latest">
-    <div class="posts">
+    <div class="posts" v-if="recommendation === false">
       <nuxt-link :to="{ slug }">
         <img :src="image" alt="thumbnail">
         <div class="post-overview">
@@ -30,6 +30,10 @@ export default {
     slug: {
       type: String,
       default: ''
+    },
+    recommendation:{
+      type: Boolean,
+      default: false
     }
   }
 }
