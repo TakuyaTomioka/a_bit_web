@@ -2,11 +2,13 @@
   <section id="latest">
     <div class="posts" v-if="recommendation === false">
       <nuxt-link :to="{ slug }">
-        <img :src="image" alt="thumbnail">
-        <div class="post-overview">
-          <h2 class="post-title">{{ title }}</h2>
-          <time class="post-date">{{ date }}</time>
-        </div>
+        <article>
+          <img :src="image" alt="thumbnail">
+          <div class="post-overview">
+            <h2 class="post-title">{{ title }}</h2>
+            <time class="post-date">{{ getFormattedDate(date) }}</time>
+          </div>
+        </article>
       </nuxt-link>
     </div>
   </section>
@@ -34,6 +36,15 @@ export default {
     recommendation:{
       type: Boolean,
       default: false
+    }
+  },
+  methods: {
+    getFormattedDate (date) {
+      const originDate = new Date(date)
+      const year = originDate.getFullYear()
+      const month = originDate.getMonth() + 1
+      const day = originDate.getDate()
+      return `${year}年${month}月${day}日`
     }
   }
 }
