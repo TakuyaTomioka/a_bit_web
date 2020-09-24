@@ -27,7 +27,7 @@ export default {
       'content_type': 'blogPost',
       order: '-sys.createdAt',
       'fields.recommendation': false,
-      limit: 3
+      limit: 10
     })
   ])
   .then(([posts]) => {
