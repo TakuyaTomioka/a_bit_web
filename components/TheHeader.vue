@@ -13,6 +13,10 @@ export default {
 }
 </script>
 
-<style>
-  
+<style scoped>
+  div{
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+  }
 </style>
