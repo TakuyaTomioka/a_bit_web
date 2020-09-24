@@ -49,16 +49,20 @@ export default {
 h1{
   font-size: 1.8rem;
   font-family: 'Roboto Mono', sans-serif;
-  margin: 1.4rem 0;
   width: 15%;
   padding:0 0 .1rem .7rem;
   border-bottom: solid #E5E5E5 5px;
 }
+.wrapper{
+  margin: 1.4rem 0;
+}
 
 @media screen and (max-width: 768px){
   h1{
-    margin: 1.0rem;
     width: 50%;
+  }
+  .wrapper{
+    margin: 1.0rem;
   }
 }
 </style>

@@ -134,6 +134,7 @@ nav {
     clip-path: circle(800px at 90% -10%);
     -webkit-clip-path: circle(800px at 90% -10%);
     transition: all 1s ease-out;
+    z-index: 2;
   }
 
   .nav-links li a {
