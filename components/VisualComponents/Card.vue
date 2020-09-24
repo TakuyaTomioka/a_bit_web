@@ -1,12 +1,15 @@
 <template>
   <section id="latest">
-    <div class="posts" v-if="recommendation === false">
+    <div class="posts">
       <nuxt-link :to="{ slug }">
         <article>
           <img :src="image" alt="thumbnail">
-          <div class="post-overview">
-            <h2 class="post-title">{{ title }}</h2>
-            <time class="post-date">{{ getFormattedDate(date) }}</time>
+          <div>
+            <div class="post-overview">
+              <h2 class="post-title">{{ title }}</h2>
+              <summary>{{ summary }}</summary>
+              <time class="post-date">{{ getFormattedDate(date) }}</time>
+            </div>
           </div>
         </article>
       </nuxt-link>
@@ -33,10 +36,10 @@ export default {
       type: String,
       default: ''
     },
-    recommendation:{
-      type: Boolean,
-      default: false
-    }
+    summary: {
+      type: String,
+      default: ''
+    },
   },
   methods: {
     getFormattedDate (date) {
@@ -65,6 +68,20 @@ img{
   width: 20%;
   height: auto;
   object-fit: cover;
+}
+
+article{
+  display: flex;
+  position: relative;
+}
+
+time{
+  position: relative;
+  bottom: -25px;
+}
+
+summary{
+  font-size: 1.1rem;
 }
 
 .posts{
@@ -98,7 +115,6 @@ div a{
   width: 80%;
   margin: 0 auto;
 }
-
 @media screen and (max-width: 768px){
   h1{
     margin: 1.0rem;
@@ -108,7 +124,9 @@ div a{
     width: 100px;
     height: 100px;
   }
-
+  summary{
+    display: none;
+  }
   .post-title{
     font-size: 0.9rem;
   }

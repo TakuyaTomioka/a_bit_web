@@ -9,8 +9,8 @@
         :image = "post.fields.headerImage.fields.file.url"
         :slug = "post.fields.slug"
         :title = "post.fields.title"
+        :summary = "post.fields.summary"
         :date = "post.fields.publishedAt"
-        :recommendation = "post.fields.recommendation"
       />
     </div>
   </div>
@@ -22,16 +22,20 @@ import Hero from'@/components/VisualComponents/Hero'
 import Card from '@/components/VisualComponents/Card'
 export default {
   asyncData() {
-    return client
-    .getEntries({
-      content_type: 'blogPost',
-      order: '-fields.publishedAt',
-      limit: 10
+  return Promise.all([
+    client.getEntries({
+      'content_type': 'blogPost',
+      order: '-sys.createdAt',
+      'fields.recommendation': false,
+      limit: 3
     })
-    .then(results => {
-      return { posts: results.items }
-    })
-    .catch(e => console.log(e));
+  ])
+  .then(([posts]) => {
+    return {
+      posts: posts.items
+    }
+  })
+  .catch(e => console.log(e));
   },
   components:{
     Hero,
