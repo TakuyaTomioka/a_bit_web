@@ -1,7 +1,9 @@
 <template>
   <div class="mv">
-    <img src="@/assets/img/mv.jpg" class="isPC pc" alt="メインビジュアル">
-    <img src="@/assets/img/mv_sp.jpg" class="isSP sp" alt="スマホ用メインビジュアル">
+    <div class="filter">
+      <img src="@/assets/img/mv.jpg" class="isPC pc" alt="メインビジュアル">
+      <img src="@/assets/img/mv_sp.jpg" class="isSP sp" alt="スマホ用メインビジュアル">
+    </div>
     <p class="message isPC">明日のWEBを<br><span class="orange">ちょっと</span>良くする</p>
     <p class="message isSP">明日のWEBを<br><span class="orange">ちょっと</span><br>良くする</p>
   </div>
@@ -21,8 +23,12 @@ export default {
   width: 100%;
   margin: 0 auto;
 }
-
-
+img{
+  opacity: 0.8;
+}
+.filter{
+  background-color: rgb(202, 191, 191);
+}
 .isPC{
   display: block;
 }
