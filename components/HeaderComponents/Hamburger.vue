@@ -99,6 +99,7 @@ nav {
     display: block;
   }
   .logo{
+    max-width: 250px;
     width: 40vw;
   }
   .cancel{
