@@ -54,7 +54,8 @@ h1{
   border-bottom: solid #E5E5E5 5px;
 }
 .wrapper{
-  margin: 1.4rem 0;
+  max-width: 1980px;
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 768px){
